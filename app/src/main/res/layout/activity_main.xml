@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="imagem de um hambúrguer"
+            android:src="@drawable/hamburguer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textView"/>
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/EstiloTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Faça o seu pedido!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner" />
+
+        <EditText
+            android:id="@+id/editTextNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            app:layout_constraintEnd_toEndOf="@id/banner"
+            app:layout_constraintStart_toStartOf="@id/banner"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+
+        <CheckBox
+            android:id="@+id/checkBoxBacon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bacon"
+            app:layout_constraintStart_toStartOf="@id/editTextNome"
+            app:layout_constraintTop_toBottomOf="@id/editTextNome" />
+
+        <CheckBox
+            android:id="@+id/checkBoxQueijo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Queijo"
+            app:layout_constraintStart_toStartOf="@id/checkBoxBacon"
+            app:layout_constraintTop_toBottomOf="@id/checkBoxBacon" />
+
+        <CheckBox
+            android:id="@+id/checkBoxOnionRings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Onion Rings"
+            app:layout_constraintStart_toStartOf="@id/checkBoxQueijo"
+            app:layout_constraintTop_toBottomOf="@id/checkBoxQueijo" />
+
+        <TextView
+            android:id="@+id/textViewQuantidade"
+            style="@style/EstiloTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantidade"
+            app:layout_constraintStart_toStartOf="@id/checkBoxOnionRings"
+            app:layout_constraintTop_toBottomOf="@id/checkBoxOnionRings" />
+
+        <LinearLayout
+            android:id="@+id/layoutQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="@id/textViewQuantidade"
+            app:layout_constraintTop_toBottomOf="@id/textViewQuantidade">
+
+            <Button
+                android:id="@+id/btnSomar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+" />
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                style="@style/EstiloTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                tools:text="0" />
+
+            <Button
+                android:id="@+id/btnSubtrair"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewResumoPedido"
+            style="@style/EstiloTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resumo do pedido"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutQuantidade" />
+
+        <TextView
+            android:id="@+id/textViewResumoPedidoDisplay"
+            style="@style/EstiloTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/textViewResumoPedido"
+            app:layout_constraintTop_toBottomOf="@id/textViewResumoPedido"
+            tools:text="R$ 0,00" />
+
+        <Button
+            android:id="@+id/btnFazerPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FazerPedido"
+            app:layout_constraintStart_toStartOf="@+id/textViewResumoPedidoDisplay"
+            app:layout_constraintTop_toBottomOf="@id/textViewResumoPedidoDisplay" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
