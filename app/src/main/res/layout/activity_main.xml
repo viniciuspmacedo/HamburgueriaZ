@@ -38,6 +38,7 @@
             android:id="@+id/editTextNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:hint="Nome"
             app:layout_constraintEnd_toEndOf="@id/banner"
             app:layout_constraintStart_toStartOf="@id/banner"
@@ -47,6 +48,7 @@
             android:id="@+id/checkBoxBacon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="Bacon"
             app:layout_constraintStart_toStartOf="@id/editTextNome"
             app:layout_constraintTop_toBottomOf="@id/editTextNome" />
@@ -68,7 +70,7 @@
             app:layout_constraintTop_toBottomOf="@id/checkBoxQueijo" />
 
         <TextView
-            android:id="@+id/textViewQuantidade"
+            android:id="@+id/textViewQuantidadeLabel"
             style="@style/EstiloTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,8 +83,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"
-            app:layout_constraintStart_toStartOf="@id/textViewQuantidade"
-            app:layout_constraintTop_toBottomOf="@id/textViewQuantidade">
+            app:layout_constraintStart_toStartOf="@id/textViewQuantidadeLabel"
+            app:layout_constraintTop_toBottomOf="@id/textViewQuantidadeLabel">
 
             <Button
                 android:id="@+id/btnSomar"
@@ -92,7 +94,7 @@
                 android:text="+" />
 
             <TextView
-                android:id="@+id/textViewTotal"
+                android:id="@+id/textViewQuantidade"
                 style="@style/EstiloTexto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,7 +111,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textViewResumoPedido"
+            android:id="@+id/textViewResumoPedidoLabel"
             style="@style/EstiloTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,21 +120,21 @@
             app:layout_constraintTop_toBottomOf="@id/layoutQuantidade" />
 
         <TextView
-            android:id="@+id/textViewResumoPedidoDisplay"
+            android:id="@+id/textViewResumoPedido"
             style="@style/EstiloTexto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/textViewResumoPedido"
-            app:layout_constraintTop_toBottomOf="@id/textViewResumoPedido"
+            app:layout_constraintStart_toStartOf="@id/textViewResumoPedidoLabel"
+            app:layout_constraintTop_toBottomOf="@id/textViewResumoPedidoLabel"
             tools:text="R$ 0,00" />
 
         <Button
             android:id="@+id/btnFazerPedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FazerPedido"
-            app:layout_constraintStart_toStartOf="@+id/textViewResumoPedidoDisplay"
-            app:layout_constraintTop_toBottomOf="@id/textViewResumoPedidoDisplay" />
+            android:text="Fazer Pedido"
+            app:layout_constraintStart_toStartOf="@+id/textViewResumoPedido"
+            app:layout_constraintTop_toBottomOf="@id/textViewResumoPedido" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
